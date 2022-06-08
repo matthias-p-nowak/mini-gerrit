@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  gerrit-stage:
+    build: build/stage
+    image: gerrit-stage
+  mini-gerrit:
+    build: build/gerrit
+    image: mini-gerrit

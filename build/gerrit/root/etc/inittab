@@ -1,0 +1,3 @@
+#
+::once:sleep 300
+::once:/opt/remove-progs.sh

@@ -1,0 +1,9 @@
+/var/tmp/*
+/bin/*
+/usr/bin/*
+/sbin/*
+/usr/sbin/*
+/var/cache/*
+/var/log/*
+/var/lib/dnf
+/var/spool/*
