@@ -1,17 +1,16 @@
 #!/bin/bash
-set -eEx
+set -eE
 
-# keep the required binaries
-ln /stage/usr/sbin/busybox /stage/tmp
+cd /stage/opt
+curl -O https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war
 
+# cleanup, remove excess to make image small
 mapfile F2D </opt/files2remove.txt
 echo "files2remove ${F2D[@]}"
-rm -rfv ${F2D[@]/#//stage}
+rm -rf ${F2D[@]/#//stage}
 
-# copy required binaries back
-ln /stage/tmp/busybox /stage/usr/sbin
-chroot /stage /usr/sbin/busybox --install -s
-rm -rfv /stage/tmp/*
+ln -sfv /usr/sbin/busybox /stage/sbin/init
 du -sh /stage 
-
+date >>/etc/created.txt
 echo "all done"
+exit 0

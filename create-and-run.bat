@@ -1,7 +1,9 @@
 rem short
 echo "starting"
-docker-compose down
-docker-compose build --progress plain
-docker image ls
-docker-compose up
+docker-compose down 
+rem remove gerrit volume if desired
+timeout 60
+docker-compose build --progress plain || exit /b
+docker image ls mini-gerrit
+docker-compose up -d || exit /b
 echo "all done"

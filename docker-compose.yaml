@@ -1,8 +1,25 @@
 version: "3.9"
+
 services:
   gerrit-stage:
-    build: build/stage
+    build: 
+      context: build/stage
+      args:
+        - GERRIT_VERSION
     image: gerrit-stage
   mini-gerrit:
     build: build/gerrit
     image: mini-gerrit
+    volumes:
+      - gerrit-data:/data
+    env_file:
+      - .env
+    ports:
+      - target: 8080
+        published: 8080-9080
+        protocol: tcp
+      - target: 29418
+        published: 29418
+        protocol: tcp
+volumes:
+  gerrit-data:
