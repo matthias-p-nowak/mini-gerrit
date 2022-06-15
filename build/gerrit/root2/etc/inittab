@@ -1,0 +1,5 @@
+#
+::sysinit:/opt/initialize.sh
+::once:/usr/sbin/slapd -d Stats,Config,ACL 
+::once:/usr/bin/java -jar /opt/gerrit.war daemon -d /data/gerrit --console-log
+::once:/opt/post-start.sh

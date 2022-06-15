@@ -1,0 +1,18 @@
+# ldap.conf(5)
+# edit this as needed and paste into ~/.ldaprc
+
+# server name
+# (for parameterless operation, make sure to include at least this line)
+URI ldap://localhost:389
+
+# default search base
+BASE o=myOrg
+
+# user to bind as
+BINDDN cn=admin,o=myOrg
+BINDPW secret
+
+# search parameters (uncomment as needed)
+#DEREF never
+#SIZELIMIT 0
+#TIMELIMIT 0
