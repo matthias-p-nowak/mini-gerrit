@@ -1,0 +1,16 @@
+/var/tmp/*
+/var/cache/*
+/var/log/*
+/var/lib/dnf
+/var/spool/*
+/usr/lib64/lua5.4
+/etc/grub.d/
+/usr/lib/dracut
+/usr/lib/kernel
+/usr/lib/systemd
+/usr/lib/udev
+/usr/lib64/engines-3
+/usr/lib64/gawk
+/tmp/*
+/usr/sbin/grub2*
+/etc/openlapd/slapd.d/*
